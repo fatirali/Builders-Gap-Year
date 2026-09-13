@@ -1,0 +1,157 @@
+<div id="builders-concepts" data-direction="studio" lang="en" aria-label="Builders Club design directions">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap');
+    #builders-concepts{--bc-paper:#f6f3ea;--bc-ink:#233a2a;--bc-accent:#d6f178;--bc-soft:#e9e8df;--bc-muted:#5b6457;--bc-line:#ccd0c2;background:var(--bc-paper);color:var(--bc-ink);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color-scheme:light;overflow:hidden}
+    #builders-concepts *{box-sizing:border-box}
+    #builders-concepts h1,#builders-concepts h2,#builders-concepts h3,#builders-concepts p{margin:0;color:inherit}
+    #builders-concepts button,#builders-concepts a{font:inherit}
+    #builders-concepts a{color:inherit;text-decoration:none}
+    #builders-concepts button{cursor:pointer}
+    #builders-concepts .bc-nav{padding:23px 5%;display:flex;align-items:center;gap:26px;border-bottom:1px solid var(--bc-line)}
+    #builders-concepts .bc-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;line-height:1.05;letter-spacing:-1px;display:flex;gap:10px;align-items:center;margin-right:auto}
+    #builders-concepts .bc-symbol{display:grid;grid-template-columns:repeat(2,10px);gap:3px;transform:rotate(-7deg)}
+    #builders-concepts .bc-symbol i{width:10px;height:10px;background:var(--bc-ink)}
+    #builders-concepts .bc-symbol i:last-child{background:var(--bc-ink);border-radius:50%}
+    #builders-concepts .bc-navlink{font-size:12px}
+    #builders-concepts .bc-lang{background:transparent;color:var(--bc-ink);border:1px solid var(--bc-line);border-radius:30px;padding:7px 12px;font-size:12px;white-space:nowrap}
+    #builders-concepts .bc-hero{padding:57px 5% 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:25px;align-items:center}
+    #builders-concepts .bc-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+    #builders-concepts .bc-dot{display:inline-block;width:7px;height:7px;background:var(--bc-ink);border-radius:50%;margin-right:8px}
+    #builders-concepts h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,6.2vw,72px);font-weight:500;line-height:1.02;letter-spacing:-3.8px;margin:24px 0}
+    #builders-concepts h1 em{font-family:'Source Serif 4',serif;font-weight:400}
+    #builders-concepts .bc-intro{max-width:380px;font-size:15px;color:var(--bc-muted)}
+    #builders-concepts .bc-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:27px}
+    #builders-concepts .bc-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;background:var(--bc-ink);color:var(--bc-paper);padding:13px 19px;border-radius:4px;font-size:13px;font-weight:500}
+    #builders-concepts .bc-textlink{font-size:12px;border-bottom:1px solid currentColor;padding:3px 0}
+    #builders-concepts .bc-art{position:relative;min-height:340px;background:var(--bc-accent);border-radius:45% 45% 3px 3px;isolation:isolate;display:flex;flex-direction:column;justify-content:center;padding:32px;transform:rotate(2deg)}
+    #builders-concepts .bc-art:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#233a2a14 1px,transparent 1px),linear-gradient(90deg,#233a2a14 1px,transparent 1px);background-size:25px 25px;z-index:-1;border-radius:inherit}
+    #builders-concepts .bc-art-top{font-size:10px;letter-spacing:1.8px;text-align:center;margin-bottom:27px;color:#233a2a}
+    #builders-concepts .bc-block{font-family:'Space Grotesk',sans-serif;font-size:clamp(25px,3.4vw,40px);font-weight:500;line-height:1.15;letter-spacing:-1.5px;padding:14px 20px;border:1px solid #233a2a;box-shadow:5px 5px 0 #233a2a;width:94%;color:#233a2a;background:#f8f5ed}
+    #builders-concepts .bc-block:nth-of-type(2){transform:rotate(-7deg);align-self:flex-start}
+    #builders-concepts .bc-block:nth-of-type(3){transform:rotate(4deg);align-self:flex-end;background:#233a2a;color:#d6f178}
+    #builders-concepts .bc-block:nth-of-type(4){transform:rotate(-3deg);align-self:center;background:#f8a276}
+    #builders-concepts .bc-art-bottom{margin-top:28px;font-family:'Source Serif 4',serif;font-size:18px;font-style:italic;color:#233a2a;text-align:center}
+    #builders-concepts .bc-strip{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:15px 5%;border-top:1px solid var(--bc-line);border-bottom:1px solid var(--bc-line);font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+    #builders-concepts .bc-section{padding:54px 5%}
+    #builders-concepts .bc-sectionhead{display:grid;grid-template-columns:1fr 2fr;gap:30px;margin-bottom:32px;align-items:start}
+    #builders-concepts h2{font-family:'Space Grotesk',sans-serif;font-size:35px;line-height:1.12;font-weight:500;letter-spacing:-1.5px;max-width:580px}
+    #builders-concepts .bc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+    #builders-concepts .bc-method{border-top:1px solid var(--bc-ink);padding-top:16px}
+    #builders-concepts .bc-number{font-family:'Source Serif 4',serif;font-style:italic;font-size:26px;display:block;margin-bottom:22px}
+    #builders-concepts h3{font-size:18px;font-weight:500;letter-spacing:-.5px;line-height:1.25;margin-bottom:12px}
+    #builders-concepts .bc-copy{font-size:13px;line-height:1.65;color:var(--bc-muted)}
+    #builders-concepts .bc-program{background:var(--bc-ink);color:var(--bc-paper)}
+    #builders-concepts .bc-program .bc-grid{gap:1px;background:#ffffff35}
+    #builders-concepts .bc-module{background:var(--bc-ink);padding:20px 20px 10px 0}
+    #builders-concepts .bc-module:not(:first-child){padding-left:20px}
+    #builders-concepts .bc-module .bc-copy{color:var(--bc-paper);opacity:.8}
+    #builders-concepts .bc-module .bc-number{color:var(--bc-accent)}
+    #builders-concepts .bc-deliverable{margin-top:24px;font-size:11px;padding-top:14px;border-top:1px solid #ffffff40;color:var(--bc-accent)}
+    #builders-concepts .bc-next-intro{max-width:530px;margin:18px 0 27px}
+    #builders-concepts .bc-logos{display:grid;grid-template-columns:repeat(6,1fr);align-items:center;gap:20px;background:#fff;padding:26px 20px;border-radius:3px;color:#233a2a}
+    #builders-concepts .bc-logo{display:flex;flex-direction:column;align-items:center;gap:9px;font-size:11px;font-weight:500}
+    #builders-concepts .bc-logo img{height:25px;width:32px;object-fit:contain}
+    #builders-concepts .bc-note{font-size:11px;color:var(--bc-muted);margin-top:12px}
+    #builders-concepts .bc-paths{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px}
+    #builders-concepts .bc-path{border-top:1px solid var(--bc-line);padding-top:20px}
+    #builders-concepts .bc-path .bc-eyebrow{margin-bottom:12px}
+    #builders-concepts .bc-close{background:var(--bc-accent);color:#233a2a;padding:40px 5%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    #builders-concepts .bc-close h2{font-size:33px}
+    #builders-concepts .bc-close p{font-size:13px;margin-top:12px;max-width:410px}
+    #builders-concepts .bc-close .bc-primary{background:#233a2a;color:#f6f3ea;white-space:nowrap}
+    #builders-concepts .bc-footer{padding:24px 5%;display:flex;gap:20px;justify-content:space-between;font-size:11px}
+    #builders-concepts[data-direction="launch"]{--bc-paper:#12151d;--bc-ink:#f3f2ec;--bc-accent:#c1a3ff;--bc-soft:#282934;--bc-muted:#c0bfca;--bc-line:#41434b}
+    #builders-concepts[data-direction="launch"] h1{font-weight:700;letter-spacing:-3px;text-transform:uppercase}
+    #builders-concepts[data-direction="launch"] h1 em{font-family:'Space Grotesk',sans-serif;color:var(--bc-accent);font-style:normal;font-weight:700}
+    #builders-concepts[data-direction="launch"] .bc-art{border-radius:0;transform:rotate(-3deg)}
+    #builders-concepts[data-direction="launch"] .bc-primary{background:var(--bc-accent);color:#12151d;border-radius:0}
+    #builders-concepts[data-direction="launch"] .bc-program{background:#242433;color:#f3f2ec}
+    #builders-concepts[data-direction="launch"] .bc-module{background:#242433}
+    #builders-concepts[data-direction="launch"] .bc-module .bc-copy{color:#f3f2ec}
+    #builders-concepts[data-direction="field"]{--bc-paper:#f9f4e9;--bc-ink:#2b3d56;--bc-accent:#e7b58f;--bc-soft:#e9e2d7;--bc-muted:#596475;--bc-line:#c9c9c5}
+    #builders-concepts[data-direction="field"] h1,#builders-concepts[data-direction="field"] h2{font-family:'Source Serif 4',serif;font-weight:400;letter-spacing:-2px}
+    #builders-concepts[data-direction="field"] .bc-art{border-radius:140px 140px 0 0;transform:rotate(0deg);background:#e6cbb0}
+    #builders-concepts[data-direction="field"] .bc-hero{grid-template-columns:1.3fr 1fr}
+    #builders-concepts[data-direction="field"] .bc-number{font-family:'Source Serif 4',serif}
+    @media(max-width:600px){#builders-concepts .bc-nav{gap:12px}#builders-concepts .bc-navlink{display:none}#builders-concepts .bc-hero,#builders-concepts[data-direction="field"] .bc-hero{grid-template-columns:1fr;padding-top:35px}#builders-concepts h1{font-size:49px;letter-spacing:-2.5px}#builders-concepts .bc-art{min-height:300px;margin:12px 12px 0;max-width:390px;width:calc(100% - 24px);justify-self:center}#builders-concepts .bc-block{font-size:32px}#builders-concepts .bc-sectionhead{grid-template-columns:1fr;gap:15px}#builders-concepts .bc-grid,#builders-concepts .bc-paths{grid-template-columns:1fr}#builders-concepts .bc-number{margin-bottom:12px}#builders-concepts .bc-section{padding-top:38px;padding-bottom:38px}#builders-concepts .bc-module,#builders-concepts .bc-module:not(:first-child){padding:20px 0}#builders-concepts .bc-logos{grid-template-columns:repeat(3,1fr);row-gap:25px}#builders-concepts .bc-close{flex-direction:column;align-items:flex-start}#builders-concepts h2{font-size:31px}#builders-concepts .bc-footer{flex-wrap:wrap}}
+    @media(pointer:coarse){#builders-concepts .bc-lang{min-height:44px}#builders-concepts .bc-textlink{padding:12px 0}}
+  </style>
+  <nav class="bc-nav" aria-label="Main navigation">
+    <a class="bc-brand" href="#bc-top" aria-label="Builders Club home"><span class="bc-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>builders<br>club</span></a>
+    <a class="bc-navlink" href="#bc-method" data-en="Our method" data-es="El método">Our method</a>
+    <a class="bc-navlink" href="#bc-program" data-en="The program" data-es="El programa">The program</a>
+    <a class="bc-navlink" href="#bc-next" data-en="What comes next" data-es="Tu siguiente paso">What comes next</a>
+    <button class="bc-lang" type="button" aria-label="Cambiar a español">EN / <span style="opacity:.6">ES</span></button>
+  </nav>
+  <section class="bc-hero" id="bc-top">
+    <div>
+      <p class="bc-eyebrow" data-en="Mexico · A gap year for ages 17–19" data-es="México · Un año sabático de los 17 a los 19">Mexico · A gap year for ages 17–19</p>
+      <h1>Build things<br>that matter.<br><em>Become someone<br>who can.</em></h1>
+      <p class="bc-intro" data-en="One year to turn your ideas into real products, communicate with confidence, and find your direction—before university." data-es="Un año para convertir tus ideas en productos reales, comunicarte con confianza y encontrar tu rumbo antes de la universidad.">One year to turn your ideas into real products, communicate with confidence, and find your direction—before university.</p>
+      <div class="bc-actions"><a class="bc-primary" href="#bc-program"><span data-en="Explore the year" data-es="Explora el programa">Explore the year</span><span aria-hidden="true">↗</span></a><a class="bc-textlink" href="#bc-method" data-en="How we learn ↓" data-es="Cómo aprendemos ↓">How we learn ↓</a></div>
+    </div>
+    <div class="bc-art" aria-label="Think deeply. Build boldly. Go further.">
+      <div class="bc-art-top" data-en="YOUR NEXT CHAPTER, IN THE MAKING" data-es="TU SIGUIENTE CAPÍTULO EMPIEZA AQUÍ">YOUR NEXT CHAPTER, IN THE MAKING</div>
+      <div class="bc-block" data-en="Think deeply. ↗" data-es="Cuestiona. ↗">Think deeply. ↗</div>
+      <div class="bc-block" data-en="Build boldly. _" data-es="Crea sin miedo. _">Build boldly. _</div>
+      <div class="bc-block" data-en="Go further. ✳" data-es="Llega más lejos. ✳">Go further. ✳</div>
+      <div class="bc-art-bottom" data-en="Made of curiosity. Built by you." data-es="Hecho de curiosidad. Creado por ti.">Made of curiosity. Built by you.</div>
+    </div>
+  </section>
+  <div class="bc-strip"><span data-en="01 year of purposeful learning" data-es="01 año de aprendizaje con propósito">01 year of purposeful learning</span><span data-en="Real people. Real problems. Real products." data-es="Personas reales. Problemas reales. Productos reales.">Real people. Real problems. Real products.</span><span data-en="Rooted in Mexico. Looking outward. ↗" data-es="Desde México, hacia el mundo. ↗">Rooted in Mexico. Looking outward. ↗</span></div>
+  <section class="bc-section" id="bc-method">
+    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="01 / Our methodology" data-es="01 / Nuestra metodología">01 / Our methodology</p><h2 data-en="Great builders learn by asking, making, and experiencing." data-es="Los grandes creadores aprenden preguntando, haciendo y viviendo.">Great builders learn by asking, making, and experiencing.</h2></div>
+    <div class="bc-grid">
+      <article class="bc-method"><span class="bc-number">01 —</span><h3 data-en="The Socratic method" data-es="El método socrático">The Socratic method</h3><p class="bc-copy" data-en="Ask better questions. Challenge your assumptions. Learn to explain what you believe—and change your mind when the evidence does." data-es="Haz mejores preguntas. Cuestiona tus supuestos. Aprende a explicar tus ideas y a cambiar de opinión cuando la evidencia lo justifique.">Ask better questions. Challenge your assumptions. Learn to explain what you believe—and change your mind when the evidence does.</p></article>
+      <article class="bc-method"><span class="bc-number">02 —</span><h3 data-en="Real-world projects" data-es="Proyectos del mundo real">Real-world projects</h3><p class="bc-copy" data-en="Find a problem worth solving. Talk to the people who face it. Build, launch, and improve a product with their feedback." data-es="Encuentra un problema que valga la pena resolver. Habla con quienes lo viven. Construye, lanza y mejora un producto con sus comentarios.">Find a problem worth solving. Talk to the people who face it. Build, launch, and improve a product with their feedback.</p></article>
+      <article class="bc-method"><span class="bc-number">03 —</span><h3 data-en="Immersive experiences" data-es="Experiencias inmersivas">Immersive experiences</h3><p class="bc-copy" data-en="Step into unfamiliar environments. Meet people with different perspectives. Bring what you discover back to what you build." data-es="Explora entornos nuevos. Conoce a personas con otras perspectivas. Aplica lo que descubras a tus propios proyectos.">Step into unfamiliar environments. Meet people with different perspectives. Bring what you discover back to what you build.</p></article>
+    </div>
+  </section>
+  <section class="bc-section bc-program" id="bc-program">
+    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="02 / The program" data-es="02 / El programa">02 / The program</p><h2 data-en="A year that changes what you're capable of." data-es="Un año que transforma lo que eres capaz de hacer.">A year that changes what you're capable of.</h2></div>
+    <div class="bc-grid">
+      <article class="bc-module"><span class="bc-number">↗</span><h3 data-en="Leadership & communication" data-es="Liderazgo y comunicación">Leadership & communication</h3><p class="bc-copy" data-en="Write clearly. Present your ideas. Listen with intention. Learn to lead a team through the messy work of making something new." data-es="Escribe con claridad. Presenta tus ideas. Escucha con atención. Aprende a guiar a un equipo en el reto de crear algo nuevo.">Write clearly. Present your ideas. Listen with intention. Learn to lead a team through the messy work of making something new.</p><p class="bc-deliverable" data-en="Put it into practice → Lead. Write. Present." data-es="Llévalo a la práctica → Lidera. Escribe. Presenta.">Put it into practice → Lead. Write. Present.</p></article>
+      <article class="bc-module"><span class="bc-number">↗</span><h3 data-en="How to build the future" data-es="Cómo construir el futuro">How to build the future</h3><p class="bc-copy" data-en="Combine software, AI, and product thinking. Learn to choose the right problem, prototype a solution, and ship something people can use." data-es="Combina software, IA y pensamiento de producto. Aprende a elegir el problema correcto, crear un prototipo y lanzar algo que las personas puedan usar.">Combine software, AI, and product thinking. Learn to choose the right problem, prototype a solution, and ship something people can use.</p><p class="bc-deliverable" data-en="Put it into practice → Research. Build. Launch." data-es="Llévalo a la práctica → Investiga. Construye. Lanza.">Put it into practice → Research. Build. Launch.</p></article>
+      <article class="bc-module"><span class="bc-number">↗</span><h3 data-en="Global immersion" data-es="Inmersión global">Global immersion</h3><p class="bc-copy" data-en="Explore how people live, work, and build beyond your own context. Develop the independence and perspective to collaborate across cultures." data-es="Explora cómo viven, trabajan y crean las personas fuera de tu entorno. Desarrolla independencia y perspectiva para colaborar entre culturas.">Explore how people live, work, and build beyond your own context. Develop the independence and perspective to collaborate across cultures.</p><p class="bc-deliverable" data-en="Put it into practice → Explore. Connect. Reflect." data-es="Llévalo a la práctica → Explora. Conecta. Reflexiona.">Put it into practice → Explore. Connect. Reflect.</p></article>
+    </div>
+  </section>
+  <section class="bc-section" id="bc-next">
+    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="03 / Your next chapter" data-es="03 / Tu siguiente capítulo">03 / Your next chapter</p><h2 data-en="Build your own way forward." data-es="Construye tu propio camino.">Build your own way forward.</h2></div>
+    <p class="bc-eyebrow" data-en="Dream about where your skills could take you" data-es="Imagina hasta dónde pueden llevarte tus habilidades">Dream about where your skills could take you</p>
+    <p class="bc-copy bc-next-intro" data-en="The world's technology companies are one possible horizon. Start developing the craft, judgment, and portfolio you can keep building on." data-es="Las empresas tecnológicas del mundo son un horizonte posible. Empieza a desarrollar las habilidades, el criterio y el portafolio que seguirás fortaleciendo.">The world's technology companies are one possible horizon. Start developing the craft, judgment, and portfolio you can keep building on.</p>
+    <div class="bc-logos" aria-label="Aspirational technology companies">
+      <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/google.svg" alt="">Google</div>
+      <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/apple.svg" alt="">Apple</div>
+      <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/microsoft.svg" alt="">Microsoft</div>
+      <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/amazon.svg" alt="">Amazon</div>
+      <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/meta.svg" alt="">Meta</div>
+      <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/nvidia.svg" alt="">NVIDIA</div>
+    </div>
+    <p class="bc-note" data-en="Illustrative aspirations, not program partners or guaranteed placements." data-es="Ejemplos de aspiraciones; no son socios del programa ni oportunidades de empleo garantizadas.">Illustrative aspirations, not program partners or guaranteed placements.</p>
+    <div class="bc-paths">
+      <article class="bc-path"><p class="bc-eyebrow" data-en="The entrepreneurial path" data-es="El camino emprendedor">The entrepreneurial path</p><h3 data-en="Or build the next one." data-es="O crea la próxima.">Or build the next one.</h3><p class="bc-copy" data-en="Turn an insight into your own venture. Test demand, find your first users, and learn what it takes to create something people value. Your first product can be the start of your own path." data-es="Convierte una idea en tu propio emprendimiento. Valida la demanda, encuentra a tus primeros usuarios y aprende a crear algo que las personas valoren. Tu primer producto puede abrirte un camino propio.">Turn an insight into your own venture. Test demand, find your first users, and learn what it takes to create something people value. Your first product can be the start of your own path.</p></article>
+      <article class="bc-path"><p class="bc-eyebrow" data-en="University, with direction" data-es="La universidad, con rumbo">University, with direction</p><h3 data-en="Arrive knowing more about you." data-es="Llega conociéndote mejor.">Arrive knowing more about you.</h3><p class="bc-copy" data-en="Bring real projects, stronger communication, and a clearer sense of what you want to study. Make your next chapter a more intentional choice." data-es="Lleva contigo proyectos reales, mejores habilidades de comunicación y más claridad sobre lo que quieres estudiar. Elige tu siguiente etapa con intención.">Bring real projects, stronger communication, and a clearer sense of what you want to study. Make your next chapter a more intentional choice.</p></article>
+    </div>
+  </section>
+  <section class="bc-close"><div><h2 data-en="Your future is a work in progress. Start building it." data-es="Tu futuro está en construcción. Empieza a crearlo.">Your future is a work in progress. Start building it.</h2><p data-en="A purposeful gap year in Mexico for curious 17–19-year-olds ready to turn ideas into action." data-es="Un año sabático con propósito en México para jóvenes de 17 a 19 años listos para convertir sus ideas en acción.">A purposeful gap year in Mexico for curious 17–19-year-olds ready to turn ideas into action.</p></div><a class="bc-primary" href="#bc-program"><span data-en="Discover the program" data-es="Conoce el programa">Discover the program</span><span aria-hidden="true">↗</span></a></section>
+  <footer class="bc-footer"><span>builders club · México</span><span data-en="Think deeply. Build boldly. Go further." data-es="Cuestiona. Crea sin miedo. Llega más lejos.">Think deeply. Build boldly. Go further.</span></footer>
+  <script>
+    (()=>{
+      const root=document.getElementById('builders-concepts');
+      const state={direction:'studio',language:'en'};
+      const headlines={studio:{en:'Build things<br>that matter.<br><em>Become someone<br>who can.</em>',es:'Crea cosas<br>que importen.<br><em>Conviértete en<br>quien puede.</em>'},launch:{en:'Turn your<br>what if<br><em>into what’s next.</em>',es:'Convierte tu<br>¿y si…?<br><em>en lo que sigue.</em>'},field:{en:'A year of making.<br><em>A lifetime<br>of possibility.</em>',es:'Un año<br>para crear.<br><em>Una vida de<br>posibilidades.</em>'}};
+      function render(){
+        root.dataset.direction=state.direction;root.lang=state.language;
+        root.querySelectorAll('[data-en]').forEach(el=>{el.textContent=el.dataset[state.language]});
+        root.querySelector('h1').innerHTML=headlines[state.direction][state.language];
+        const toggle=root.querySelector('.bc-lang');
+        toggle.innerHTML=state.language==='en'?'EN / <span style="opacity:.6">ES</span>':'<span style="opacity:.6">EN</span> / ES';
+        toggle.setAttribute('aria-label',state.language==='en'?'Cambiar a español':'Switch to English');
+        root.querySelector('.bc-art').setAttribute('aria-label',state.language==='en'?'Think deeply. Build boldly. Go further.':'Cuestiona. Crea sin miedo. Llega más lejos.');
+      }
+      root.querySelector('.bc-lang').addEventListener('click',()=>{state.language=state.language==='en'?'es':'en';render()});
+      render();
+      if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addSelect(state,'direction',{label:'Design direction',options:[{label:'01 · Builders Studio — warm & editorial',value:'studio'},{label:'02 · Launchpad — bold & electric',value:'launch'},{label:'03 · Field Notes — thoughtful & academic',value:'field'}]});tweak.addSelect(state,'language',{label:'Language',options:[{label:'English',value:'en'},{label:'Español',value:'es'}]});}
+    })();
+  </script>
+</div>
