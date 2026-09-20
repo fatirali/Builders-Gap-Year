@@ -1,0 +1,49 @@
+#builders-concepts .bc-schedule-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--bc-accent);margin-bottom:28px}
+#builders-concepts .bc-phase{position:relative}
+#builders-concepts .bc-phase-heading{margin:0}
+#builders-concepts .bc-phase-trigger{position:relative;display:block;width:100%;padding:25px 40px 25px 36px;text-align:left;border:0;background:transparent;color:var(--bc-paper);cursor:default}
+#builders-concepts .bc-phase-time{display:block;font-size:11px;font-weight:400;letter-spacing:1px;margin-bottom:12px;opacity:.7}
+#builders-concepts .bc-phase-name{display:block;font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.2vw,29px);line-height:1.2;letter-spacing:-.7px}
+#builders-concepts .bc-phase-dot{position:absolute;left:0;top:29px;width:11px;height:11px;border:1px solid var(--bc-accent);background:var(--bc-ink);border-radius:50%}
+#builders-concepts .bc-phase-arrow{position:absolute;right:6px;top:26px;font-size:22px;opacity:0}
+#builders-concepts .bc-phase-panel{padding:30px;background:#ffffff08;border:1px solid #ffffff26;border-radius:6px;margin:0 0 24px 36px}
+#builders-concepts .bc-phase-panel .bc-eyebrow{color:var(--bc-accent);margin-bottom:20px}
+#builders-concepts .bc-phase-panel h3{font-size:clamp(25px,2.6vw,34px);line-height:1.15;letter-spacing:-1px;margin-bottom:18px;max-width:510px}
+#builders-concepts .bc-phase-panel .bc-copy{color:var(--bc-paper);opacity:.8;font-size:14px;line-height:1.75}
+#builders-concepts .bc-phase-panel h4{font-size:12px;font-weight:500;margin:24px 0 12px}
+#builders-concepts .bc-phase-panel ul{padding-left:18px;margin:0;font-size:13px;line-height:1.7;color:var(--bc-paper)}
+#builders-concepts .bc-phase-panel li{padding-left:4px;margin:8px 0}
+#builders-concepts .bc-phase-panel li::marker{color:var(--bc-accent)}
+#builders-concepts .bc-phase-outcome{border-top:1px solid #ffffff26;margin-top:26px;padding-top:20px}
+#builders-concepts .bc-phase-outcome span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:8px}
+#builders-concepts .bc-phase-outcome strong{display:block;color:var(--bc-accent);font-size:17px;font-weight:500}
+#builders-concepts .bc-phase-rail{display:none}
+#builders-concepts .bc-timeline[data-enhanced]{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:7%;align-items:start}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-list{position:relative}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-trigger{cursor:pointer;transition:color 200ms ease}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-trigger[data-active]{color:var(--bc-accent)}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-trigger[data-active] .bc-phase-time{opacity:1}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-trigger[data-active] .bc-phase-dot{background:var(--bc-accent);box-shadow:0 0 0 5px #d6f17818}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-trigger[data-active] .bc-phase-arrow{opacity:1}
+#builders-concepts .bc-phase-trigger:focus-visible{outline:2px solid var(--bc-accent);outline-offset:5px;border-radius:3px}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-rail{display:block;position:absolute;left:5px;top:var(--rail-top);height:var(--rail-height);width:1px;background:#ffffff35;pointer-events:none}
+#builders-concepts .bc-phase-rail span{display:block;height:100%;background:var(--bc-accent);transform-origin:top;transform:scaleY(var(--rail-progress,0));transition:transform 250ms ease}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-details{display:grid;position:relative}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-panel{grid-area:1/1;margin:0;visibility:hidden;pointer-events:none}
+#builders-concepts .bc-timeline[data-enhanced] .bc-phase-panel[data-active]{visibility:visible;pointer-events:auto;animation:bc-phase-enter 200ms ease both}
+@keyframes bc-phase-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){
+  #builders-concepts .bc-timeline[data-enhanced]{display:block}
+  #builders-concepts .bc-phase-trigger{padding:22px 32px 22px 29px}
+  #builders-concepts .bc-phase-name{font-size:23px}
+  #builders-concepts .bc-phase-time{font-size:10px}
+  #builders-concepts .bc-phase-panel{padding:23px;margin-left:29px}
+  #builders-concepts .bc-timeline[data-enhanced] .bc-phase-panel{display:none;margin:0 0 18px 29px}
+  #builders-concepts .bc-timeline[data-enhanced] .bc-phase-panel[data-active]{display:block}
+  #builders-concepts .bc-timeline[data-enhanced] .bc-phase-details{display:none}
+  #builders-concepts .bc-phase-panel h3{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  #builders-concepts .bc-timeline[data-enhanced] .bc-phase-trigger,#builders-concepts .bc-phase-rail span{transition:none}
+  #builders-concepts .bc-timeline[data-enhanced] .bc-phase-panel[data-active]{animation:none}
+}

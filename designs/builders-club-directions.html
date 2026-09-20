@@ -1,4 +1,6 @@
 <div id="builders-concepts" data-direction="studio" lang="en" aria-label="Builders Club design directions">
+  <link rel="stylesheet" href="/program.css">
+  <script src="/program.js" defer></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap');
     #builders-concepts{--bc-paper:#f6f3ea;--bc-ink:#233a2a;--bc-accent:#d6f178;--bc-soft:#e9e8df;--bc-muted:#5b6457;--bc-line:#ccd0c2;background:var(--bc-paper);color:var(--bc-ink);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color-scheme:light;overflow:hidden}
@@ -27,6 +29,7 @@
     #builders-concepts .bc-art:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#233a2a14 1px,transparent 1px),linear-gradient(90deg,#233a2a14 1px,transparent 1px);background-size:25px 25px;z-index:-1;border-radius:inherit}
     #builders-concepts .bc-art-top{font-size:10px;letter-spacing:1.8px;text-align:center;margin-bottom:27px;color:#233a2a}
     #builders-concepts .bc-block{font-family:'Space Grotesk',sans-serif;font-size:clamp(25px,3.4vw,40px);font-weight:500;line-height:1.15;letter-spacing:-1.5px;padding:14px 20px;border:1px solid #233a2a;box-shadow:5px 5px 0 #233a2a;width:94%;color:#233a2a;background:#f8f5ed}
+    #builders-concepts .bc-block + .bc-block{margin-top:24px}
     #builders-concepts .bc-block:nth-of-type(2){transform:rotate(-7deg);align-self:flex-start}
     #builders-concepts .bc-block:nth-of-type(3){transform:rotate(4deg);align-self:flex-end;background:#233a2a;color:#d6f178}
     #builders-concepts .bc-block:nth-of-type(4){transform:rotate(-3deg);align-self:center;background:#f8a276}
@@ -73,7 +76,7 @@
     #builders-concepts[data-direction="field"] .bc-art{border-radius:140px 140px 0 0;transform:rotate(0deg);background:#e6cbb0}
     #builders-concepts[data-direction="field"] .bc-hero{grid-template-columns:1.3fr 1fr}
     #builders-concepts[data-direction="field"] .bc-number{font-family:'Source Serif 4',serif}
-    @media(max-width:600px){#builders-concepts .bc-nav{gap:12px}#builders-concepts .bc-navlink{display:none}#builders-concepts .bc-hero,#builders-concepts[data-direction="field"] .bc-hero{grid-template-columns:1fr;padding-top:35px}#builders-concepts h1{font-size:49px;letter-spacing:-2.5px}#builders-concepts .bc-art{min-height:300px;margin:12px 12px 0;max-width:390px;width:calc(100% - 24px);justify-self:center}#builders-concepts .bc-block{font-size:32px}#builders-concepts .bc-sectionhead{grid-template-columns:1fr;gap:15px}#builders-concepts .bc-grid,#builders-concepts .bc-paths{grid-template-columns:1fr}#builders-concepts .bc-number{margin-bottom:12px}#builders-concepts .bc-section{padding-top:38px;padding-bottom:38px}#builders-concepts .bc-module,#builders-concepts .bc-module:not(:first-child){padding:20px 0}#builders-concepts .bc-logos{grid-template-columns:repeat(3,1fr);row-gap:25px}#builders-concepts .bc-close{flex-direction:column;align-items:flex-start}#builders-concepts h2{font-size:31px}#builders-concepts .bc-footer{flex-wrap:wrap}}
+    @media(max-width:600px){#builders-concepts .bc-nav{gap:12px}#builders-concepts .bc-navlink{display:none}#builders-concepts .bc-hero,#builders-concepts[data-direction="field"] .bc-hero{grid-template-columns:1fr;padding-top:35px}#builders-concepts h1{font-size:49px;letter-spacing:-2.5px}#builders-concepts .bc-art{min-height:300px;margin:12px 12px 0;max-width:390px;width:calc(100% - 24px);justify-self:center}#builders-concepts .bc-block{font-size:clamp(20px,6vw,28px)}#builders-concepts .bc-sectionhead{grid-template-columns:1fr;gap:15px}#builders-concepts .bc-grid,#builders-concepts .bc-paths{grid-template-columns:1fr}#builders-concepts .bc-number{margin-bottom:12px}#builders-concepts .bc-section{padding-top:38px;padding-bottom:38px}#builders-concepts .bc-module,#builders-concepts .bc-module:not(:first-child){padding:20px 0}#builders-concepts .bc-logos{grid-template-columns:repeat(3,1fr);row-gap:25px}#builders-concepts .bc-close{flex-direction:column;align-items:flex-start}#builders-concepts h2{font-size:31px}#builders-concepts .bc-footer{flex-wrap:wrap}}
     @media(pointer:coarse){#builders-concepts .bc-lang{min-height:44px}#builders-concepts .bc-textlink{padding:12px 0}}
   </style>
   <nav class="bc-nav" aria-label="Main navigation">
@@ -85,41 +88,88 @@
   </nav>
   <section class="bc-hero" id="bc-top">
     <div>
-      <p class="bc-eyebrow" data-en="Mexico · A gap year for ages 17–19" data-es="México · Un año sabático de los 17 a los 19">Mexico · A gap year for ages 17–19</p>
-      <h1>Build things<br>that matter.<br><em>Become someone<br>who can.</em></h1>
-      <p class="bc-intro" data-en="One year to turn your ideas into real products, communicate with confidence, and find your direction—before university." data-es="Un año para convertir tus ideas en productos reales, comunicarte con confianza y encontrar tu rumbo antes de la universidad.">One year to turn your ideas into real products, communicate with confidence, and find your direction—before university.</p>
-      <div class="bc-actions"><a class="bc-primary" href="#bc-program"><span data-en="Explore the year" data-es="Explora el programa">Explore the year</span><span aria-hidden="true">↗</span></a><a class="bc-textlink" href="#bc-method" data-en="How we learn ↓" data-es="Cómo aprendemos ↓">How we learn ↓</a></div>
+      <p class="bc-eyebrow" data-en="Mexico · A gap year for ages 17–19" data-es="México · Un año antes de la universidad · 17–19 años">Mexico · A gap year for ages 17–19</p>
+      <h1>A year to try<br>your ideas<br><em>before university.</em></h1>
+      <p class="bc-intro" data-en="Work on your own projects, learn to explain your ideas, and explore what you’d like to study." data-es="Trabaja en tus propios proyectos, aprende a explicar tus ideas y descubre qué te gustaría estudiar.">Work on your own projects, learn to explain your ideas, and explore what you’d like to study.</p>
+      <div class="bc-actions"><a class="bc-primary" href="#bc-program"><span data-en="Apply to the club" data-es="Quiero postularme">Apply to the club</span><span aria-hidden="true">↗</span></a><a class="bc-textlink" href="#bc-method" data-en="How we learn ↓" data-es="Cómo aprendemos ↓">How we learn ↓</a></div>
     </div>
-    <div class="bc-art" aria-label="Think deeply. Build boldly. Go further.">
-      <div class="bc-art-top" data-en="YOUR NEXT CHAPTER, IN THE MAKING" data-es="TU SIGUIENTE CAPÍTULO EMPIEZA AQUÍ">YOUR NEXT CHAPTER, IN THE MAKING</div>
-      <div class="bc-block" data-en="Think deeply. ↗" data-es="Cuestiona. ↗">Think deeply. ↗</div>
-      <div class="bc-block" data-en="Build boldly. _" data-es="Crea sin miedo. _">Build boldly. _</div>
-      <div class="bc-block" data-en="Go further. ✳" data-es="Llega más lejos. ✳">Go further. ✳</div>
-      <div class="bc-art-bottom" data-en="Made of curiosity. Built by you." data-es="Hecho de curiosidad. Creado por ti.">Made of curiosity. Built by you.</div>
+    <div class="bc-art" aria-label="Questions, projects, and experiences.">
+      <div class="bc-art-top" data-en="A YEAR AT BUILDERS CLUB" data-es="UN AÑO EN BUILDERS CLUB">A YEAR AT BUILDERS CLUB</div>
+      <div class="bc-block" data-en="Questions ↗" data-es="Preguntas ↗">Questions ↗</div>
+      <div class="bc-block" data-en="Projects _" data-es="Proyectos _">Projects _</div>
+      <div class="bc-block" data-en="Experiences ✳" data-es="Experiencias ✳">Experiences ✳</div>
+      <div class="bc-art-bottom" data-en="What would you like to try?" data-es="¿Qué te gustaría probar?">What would you like to try?</div>
     </div>
   </section>
-  <div class="bc-strip"><span data-en="01 year of purposeful learning" data-es="01 año de aprendizaje con propósito">01 year of purposeful learning</span><span data-en="Real people. Real problems. Real products." data-es="Personas reales. Problemas reales. Productos reales.">Real people. Real problems. Real products.</span><span data-en="Rooted in Mexico. Looking outward. ↗" data-es="Desde México, hacia el mundo. ↗">Rooted in Mexico. Looking outward. ↗</span></div>
+  <div class="bc-strip"><span data-en="01 year before university" data-es="01 año antes de la universidad">01 year before university</span><span data-en="Learn through your own projects" data-es="Aprende con tus propios proyectos">Learn through your own projects</span><span data-en="Based in Mexico ↗" data-es="En México ↗">Based in Mexico ↗</span></div>
   <section class="bc-section" id="bc-method">
-    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="01 / Our methodology" data-es="01 / Nuestra metodología">01 / Our methodology</p><h2 data-en="Great builders learn by asking, making, and experiencing." data-es="Los grandes creadores aprenden preguntando, haciendo y viviendo.">Great builders learn by asking, making, and experiencing.</h2></div>
+    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="01 / How we learn" data-es="01 / Cómo aprendemos">01 / How we learn</p><h2 data-en="Learn by working through questions and projects." data-es="Aprende a partir de preguntas y proyectos.">Learn by working through questions and projects.</h2></div>
     <div class="bc-grid">
-      <article class="bc-method"><span class="bc-number">01 —</span><h3 data-en="The Socratic method" data-es="El método socrático">The Socratic method</h3><p class="bc-copy" data-en="Ask better questions. Challenge your assumptions. Learn to explain what you believe—and change your mind when the evidence does." data-es="Haz mejores preguntas. Cuestiona tus supuestos. Aprende a explicar tus ideas y a cambiar de opinión cuando la evidencia lo justifique.">Ask better questions. Challenge your assumptions. Learn to explain what you believe—and change your mind when the evidence does.</p></article>
-      <article class="bc-method"><span class="bc-number">02 —</span><h3 data-en="Real-world projects" data-es="Proyectos del mundo real">Real-world projects</h3><p class="bc-copy" data-en="Find a problem worth solving. Talk to the people who face it. Build, launch, and improve a product with their feedback." data-es="Encuentra un problema que valga la pena resolver. Habla con quienes lo viven. Construye, lanza y mejora un producto con sus comentarios.">Find a problem worth solving. Talk to the people who face it. Build, launch, and improve a product with their feedback.</p></article>
-      <article class="bc-method"><span class="bc-number">03 —</span><h3 data-en="Immersive experiences" data-es="Experiencias inmersivas">Immersive experiences</h3><p class="bc-copy" data-en="Step into unfamiliar environments. Meet people with different perspectives. Bring what you discover back to what you build." data-es="Explora entornos nuevos. Conoce a personas con otras perspectivas. Aplica lo que descubras a tus propios proyectos.">Step into unfamiliar environments. Meet people with different perspectives. Bring what you discover back to what you build.</p></article>
+      <article class="bc-method"><span class="bc-number">01 —</span><h3 data-en="The Socratic method" data-es="El método socrático">The Socratic method</h3><p class="bc-copy" data-en="Explain your thinking and question the ideas you take for granted. Learn to change your mind when the evidence gives you a reason to." data-es="Explica cómo llegaste a una conclusión y cuestiona las ideas que das por hecho. Aprende a cambiar de opinión cuando haya razones para hacerlo.">Explain your thinking and question the ideas you take for granted. Learn to change your mind when the evidence gives you a reason to.</p></article>
+      <article class="bc-method"><span class="bc-number">02 —</span><h3 data-en="Projects" data-es="Proyectos">Projects</h3><p class="bc-copy" data-en="Start with a problem people actually have. Build something they can try, then use their feedback to improve it." data-es="Empieza con un problema que alguien necesite resolver. Crea algo que pueda probar y mejóralo con sus comentarios.">Start with a problem people actually have. Build something they can try, then use their feedback to improve it.</p></article>
+      <article class="bc-method"><span class="bc-number">03 —</span><h3 data-en="Learning beyond your surroundings" data-es="Aprender fuera de tu entorno">Learning beyond your surroundings</h3><p class="bc-copy" data-en="Spend time in unfamiliar settings and get to know people who see things differently. Use what you learn in your projects." data-es="Conoce lugares y personas con otras formas de ver las cosas. Aplica lo que aprendas a tus proyectos.">Spend time in unfamiliar settings and get to know people who see things differently. Use what you learn in your projects.</p></article>
     </div>
   </section>
   <section class="bc-section bc-program" id="bc-program">
-    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="02 / The program" data-es="02 / El programa">02 / The program</p><h2 data-en="A year that changes what you're capable of." data-es="Un año que transforma lo que eres capaz de hacer.">A year that changes what you're capable of.</h2></div>
-    <div class="bc-grid">
-      <article class="bc-module"><span class="bc-number">↗</span><h3 data-en="Leadership & communication" data-es="Liderazgo y comunicación">Leadership & communication</h3><p class="bc-copy" data-en="Write clearly. Present your ideas. Listen with intention. Learn to lead a team through the messy work of making something new." data-es="Escribe con claridad. Presenta tus ideas. Escucha con atención. Aprende a guiar a un equipo en el reto de crear algo nuevo.">Write clearly. Present your ideas. Listen with intention. Learn to lead a team through the messy work of making something new.</p><p class="bc-deliverable" data-en="Put it into practice → Lead. Write. Present." data-es="Llévalo a la práctica → Lidera. Escribe. Presenta.">Put it into practice → Lead. Write. Present.</p></article>
-      <article class="bc-module"><span class="bc-number">↗</span><h3 data-en="How to build the future" data-es="Cómo construir el futuro">How to build the future</h3><p class="bc-copy" data-en="Combine software, AI, and product thinking. Learn to choose the right problem, prototype a solution, and ship something people can use." data-es="Combina software, IA y pensamiento de producto. Aprende a elegir el problema correcto, crear un prototipo y lanzar algo que las personas puedan usar.">Combine software, AI, and product thinking. Learn to choose the right problem, prototype a solution, and ship something people can use.</p><p class="bc-deliverable" data-en="Put it into practice → Research. Build. Launch." data-es="Llévalo a la práctica → Investiga. Construye. Lanza.">Put it into practice → Research. Build. Launch.</p></article>
-      <article class="bc-module"><span class="bc-number">↗</span><h3 data-en="Global immersion" data-es="Inmersión global">Global immersion</h3><p class="bc-copy" data-en="Explore how people live, work, and build beyond your own context. Develop the independence and perspective to collaborate across cultures." data-es="Explora cómo viven, trabajan y crean las personas fuera de tu entorno. Desarrolla independencia y perspectiva para colaborar entre culturas.">Explore how people live, work, and build beyond your own context. Develop the independence and perspective to collaborate across cultures.</p><p class="bc-deliverable" data-en="Put it into practice → Explore. Connect. Reflect." data-es="Llévalo a la práctica → Explora. Conecta. Reflexiona.">Put it into practice → Explore. Connect. Reflect.</p></article>
+    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="02 / The program" data-es="02 / El programa">02 / The program</p><h2 data-en="What you’ll work on during the year." data-es="Lo que harás durante el año.">What you’ll work on during the year.</h2></div>
+    <p id="bc-schedule-label" class="bc-schedule-label" data-en="Program phases" data-es="Fases del programa">Program phases</p>
+    <div class="bc-timeline">
+      <div class="bc-phase-list" aria-labelledby="bc-schedule-label">
+        <div class="bc-phase-rail" aria-hidden="true"><span></span></div>
+      <div class="bc-phase">
+        <h3 class="bc-phase-heading"><button class="bc-phase-trigger" id="bc-phase-tab-1" type="button" aria-controls="bc-phase-panel-1">
+          <span class="bc-phase-dot" aria-hidden="true"></span>
+          <span class="bc-phase-time" data-en="Phase 1" data-es="Fase 1">Phase 1</span>
+          <span class="bc-phase-name" data-en="Leadership &amp; communication" data-es="Liderazgo y comunicación">Leadership &amp; communication</span><span class="bc-phase-arrow" aria-hidden="true">↗</span>
+        </button></h3>
+        <section class="bc-phase-panel" id="bc-phase-panel-1" aria-labelledby="bc-phase-tab-1">
+          <p class="bc-eyebrow" data-en="PHASE 1" data-es="FASE 1">PHASE 1</p>
+          <h3 data-en="Make your ideas clear." data-es="Explica tus ideas con claridad.">Make your ideas clear.</h3>
+          <p class="bc-copy" data-en="Practice explaining your ideas in writing and in presentations. Learn to listen to your teammates and lead a project together." data-es="Practica cómo explicar tus ideas por escrito y al presentarlas. Aprende a escuchar a tu equipo y a coordinar el trabajo de un proyecto.">Practice explaining your ideas in writing and in presentations. Learn to listen to your teammates and lead a project together.</p>
+          <h4 data-en="What you’ll practice" data-es="Lo que practicarás">What you’ll practice</h4>
+          <ul><li data-en="Write about your ideas and the thinking behind them." data-es="Escribe sobre tus ideas y explica cómo llegaste a ellas.">Write about your ideas and the thinking behind them.</li><li data-en="Present your work and listen to your teammates." data-es="Presenta tu trabajo y escucha a tu equipo.">Present your work and listen to your teammates.</li><li data-en="Practice coordinating a project with other people." data-es="Practica cómo coordinar un proyecto con otras personas.">Practice coordinating a project with other people.</li></ul>
+          <p class="bc-phase-outcome"><span data-en="In practice" data-es="En la práctica">In practice</span><strong data-en="Present your ideas" data-es="Presenta tus ideas">Present your ideas</strong></p>
+        </section>
+      </div>
+      <div class="bc-phase">
+        <h3 class="bc-phase-heading"><button class="bc-phase-trigger" id="bc-phase-tab-2" type="button" aria-controls="bc-phase-panel-2">
+          <span class="bc-phase-dot" aria-hidden="true"></span>
+          <span class="bc-phase-time" data-en="Phase 2" data-es="Fase 2">Phase 2</span>
+          <span class="bc-phase-name" data-en="Software, AI &amp; products" data-es="Software, IA y productos">Software, AI &amp; products</span><span class="bc-phase-arrow" aria-hidden="true">↗</span>
+        </button></h3>
+        <section class="bc-phase-panel" id="bc-phase-panel-2" aria-labelledby="bc-phase-tab-2">
+          <p class="bc-eyebrow" data-en="PHASE 2" data-es="FASE 2">PHASE 2</p>
+          <h3 data-en="Take a product from idea to launch." data-es="Lleva un producto de la idea al lanzamiento.">Take a product from idea to launch.</h3>
+          <p class="bc-copy" data-en="Use software and AI to develop a product, from choosing a problem to making a prototype and releasing it for people to use." data-es="Usa software e IA para desarrollar un producto: desde elegir un problema hasta crear un prototipo y ponerlo en manos de quienes lo necesitan.">Use software and AI to develop a product, from choosing a problem to making a prototype and releasing it for people to use.</p>
+          <h4 data-en="What you’ll practice" data-es="Lo que practicarás">What you’ll practice</h4>
+          <ul><li data-en="Talk to people about a problem they need to solve." data-es="Habla con personas sobre un problema que necesiten resolver.">Talk to people about a problem they need to solve.</li><li data-en="Build a prototype using software and AI." data-es="Crea un prototipo con software e IA.">Build a prototype using software and AI.</li><li data-en="Let people try it and improve it with their feedback." data-es="Deja que lo prueben y mejóralo con sus comentarios.">Let people try it and improve it with their feedback.</li></ul>
+          <p class="bc-phase-outcome"><span data-en="In practice" data-es="En la práctica">In practice</span><strong data-en="Launch a product" data-es="Lanza un producto">Launch a product</strong></p>
+        </section>
+      </div>
+      <div class="bc-phase">
+        <h3 class="bc-phase-heading"><button class="bc-phase-trigger" id="bc-phase-tab-3" type="button" aria-controls="bc-phase-panel-3">
+          <span class="bc-phase-dot" aria-hidden="true"></span>
+          <span class="bc-phase-time" data-en="Phase 3" data-es="Fase 3">Phase 3</span>
+          <span class="bc-phase-name" data-en="Working across cultures" data-es="Trabajar con otras culturas">Working across cultures</span><span class="bc-phase-arrow" aria-hidden="true">↗</span>
+        </button></h3>
+        <section class="bc-phase-panel" id="bc-phase-panel-3" aria-labelledby="bc-phase-tab-3">
+          <p class="bc-eyebrow" data-en="PHASE 3" data-es="FASE 3">PHASE 3</p>
+          <h3 data-en="Get to know other ways of working." data-es="Conoce otras formas de trabajar.">Get to know other ways of working.</h3>
+          <p class="bc-copy" data-en="Explore how people in other cultures live and work. Learn to collaborate with people whose experiences differ from yours." data-es="Conoce cómo se vive y se trabaja en otras culturas. Aprende a colaborar con personas que han tenido experiencias distintas a las tuyas.">Explore how people in other cultures live and work. Learn to collaborate with people whose experiences differ from yours.</p>
+          <h4 data-en="What you’ll practice" data-es="Lo que practicarás">What you’ll practice</h4>
+          <ul><li data-en="Explore how people live and work in other cultures." data-es="Explora cómo se vive y se trabaja en otras culturas.">Explore how people live and work in other cultures.</li><li data-en="Collaborate with people whose experiences differ from yours." data-es="Colabora con personas que han tenido experiencias distintas a las tuyas.">Collaborate with people whose experiences differ from yours.</li><li data-en="Bring what you learn back to your own projects." data-es="Aplica lo que aprendas a tus propios proyectos.">Bring what you learn back to your own projects.</li></ul>
+          <p class="bc-phase-outcome"><span data-en="In practice" data-es="En la práctica">In practice</span><strong data-en="Compare ways of working" data-es="Compara formas de trabajar">Compare ways of working</strong></p>
+        </section>
+      </div>
+      </div>
+      <div class="bc-phase-details"></div>
     </div>
   </section>
   <section class="bc-section" id="bc-next">
-    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="03 / Your next chapter" data-es="03 / Tu siguiente capítulo">03 / Your next chapter</p><h2 data-en="Build your own way forward." data-es="Construye tu propio camino.">Build your own way forward.</h2></div>
-    <p class="bc-eyebrow" data-en="Dream about where your skills could take you" data-es="Imagina hasta dónde pueden llevarte tus habilidades">Dream about where your skills could take you</p>
-    <p class="bc-copy bc-next-intro" data-en="The world's technology companies are one possible horizon. Start developing the craft, judgment, and portfolio you can keep building on." data-es="Las empresas tecnológicas del mundo son un horizonte posible. Empieza a desarrollar las habilidades, el criterio y el portafolio que seguirás fortaleciendo.">The world's technology companies are one possible horizon. Start developing the craft, judgment, and portfolio you can keep building on.</p>
-    <div class="bc-logos" aria-label="Aspirational technology companies">
+    <div class="bc-sectionhead"><p class="bc-eyebrow" data-en="03 / After the year" data-es="03 / Después del programa">03 / After the year</p><h2 data-en="Explore what you could do next." data-es="Explora qué te gustaría hacer después.">Explore what you could do next.</h2></div>
+    <p class="bc-eyebrow" data-en="Working in technology" data-es="Trabajar en tecnología">Working in technology</p>
+    <p class="bc-copy bc-next-intro" data-en="If working in technology interests you, start putting together projects that show what you can do. These companies are examples of places you might aim for over time." data-es="Si te interesa trabajar en tecnología, empieza a reunir proyectos que muestren lo que sabes hacer. Estas empresas son ejemplos de lugares a los que podrías aspirar con el tiempo.">If working in technology interests you, start putting together projects that show what you can do. These companies are examples of places you might aim for over time.</p>
+    <div class="bc-logos" aria-label="Examples of technology companies">
       <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/google.svg" alt="">Google</div>
       <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/apple.svg" alt="">Apple</div>
       <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/microsoft.svg" alt="">Microsoft</div>
@@ -127,27 +177,34 @@
       <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/meta.svg" alt="">Meta</div>
       <div class="bc-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/nvidia.svg" alt="">NVIDIA</div>
     </div>
-    <p class="bc-note" data-en="Illustrative aspirations, not program partners or guaranteed placements." data-es="Ejemplos de aspiraciones; no son socios del programa ni oportunidades de empleo garantizadas.">Illustrative aspirations, not program partners or guaranteed placements.</p>
+    <p class="bc-note" data-en="These companies are not program partners. The program does not guarantee a job." data-es="Estas empresas no son socias del programa. El programa no garantiza empleo.">These companies are not program partners. The program does not guarantee a job.</p>
     <div class="bc-paths">
-      <article class="bc-path"><p class="bc-eyebrow" data-en="The entrepreneurial path" data-es="El camino emprendedor">The entrepreneurial path</p><h3 data-en="Or build the next one." data-es="O crea la próxima.">Or build the next one.</h3><p class="bc-copy" data-en="Turn an insight into your own venture. Test demand, find your first users, and learn what it takes to create something people value. Your first product can be the start of your own path." data-es="Convierte una idea en tu propio emprendimiento. Valida la demanda, encuentra a tus primeros usuarios y aprende a crear algo que las personas valoren. Tu primer producto puede abrirte un camino propio.">Turn an insight into your own venture. Test demand, find your first users, and learn what it takes to create something people value. Your first product can be the start of your own path.</p></article>
-      <article class="bc-path"><p class="bc-eyebrow" data-en="University, with direction" data-es="La universidad, con rumbo">University, with direction</p><h3 data-en="Arrive knowing more about you." data-es="Llega conociéndote mejor.">Arrive knowing more about you.</h3><p class="bc-copy" data-en="Bring real projects, stronger communication, and a clearer sense of what you want to study. Make your next chapter a more intentional choice." data-es="Lleva contigo proyectos reales, mejores habilidades de comunicación y más claridad sobre lo que quieres estudiar. Elige tu siguiente etapa con intención.">Bring real projects, stronger communication, and a clearer sense of what you want to study. Make your next chapter a more intentional choice.</p></article>
+      <article class="bc-path"><p class="bc-eyebrow" data-en="Starting a business" data-es="Emprender">Starting a business</p><h3 data-en="Try an idea for a business." data-es="Prueba una idea de negocio.">Try an idea for a business.</h3><p class="bc-copy" data-en="Find out whether people need what you want to make. Work with your first users and learn what it takes to turn a project into a business." data-es="Averigua si hay personas que necesitan lo que quieres crear. Trabaja con tus primeros usuarios y aprende qué hace falta para convertir un proyecto en un negocio.">Find out whether people need what you want to make. Work with your first users and learn what it takes to turn a project into a business.</p></article>
+      <article class="bc-path"><p class="bc-eyebrow" data-en="Choosing a degree" data-es="Elegir una carrera">Choosing a degree</p><h3 data-en="Get a better idea of what you want to study." data-es="Conoce mejor lo que te interesa antes de elegir una carrera.">Get a better idea of what you want to study.</h3><p class="bc-copy" data-en="Use the year to explore your interests through projects. That experience can help you decide what you’d like to study at university." data-es="Dedica el año a explorar lo que te interesa a través de proyectos. Esa experiencia puede ayudarte a decidir qué quieres estudiar en la universidad.">Use the year to explore your interests through projects. That experience can help you decide what you’d like to study at university.</p></article>
     </div>
   </section>
-  <section class="bc-close"><div><h2 data-en="Your future is a work in progress. Start building it." data-es="Tu futuro está en construcción. Empieza a crearlo.">Your future is a work in progress. Start building it.</h2><p data-en="A purposeful gap year in Mexico for curious 17–19-year-olds ready to turn ideas into action." data-es="Un año sabático con propósito en México para jóvenes de 17 a 19 años listos para convertir sus ideas en acción.">A purposeful gap year in Mexico for curious 17–19-year-olds ready to turn ideas into action.</p></div><a class="bc-primary" href="#bc-program"><span data-en="Discover the program" data-es="Conoce el programa">Discover the program</span><span aria-hidden="true">↗</span></a></section>
-  <footer class="bc-footer"><span>builders club · México</span><span data-en="Think deeply. Build boldly. Go further." data-es="Cuestiona. Crea sin miedo. Llega más lejos.">Think deeply. Build boldly. Go further.</span></footer>
+  <section class="bc-close"><div><h2 data-en="Interested in joining Builders Club?" data-es="¿Te gustaría unirte a Builders Club?">Interested in joining Builders Club?</h2><p data-en="Spend a year working on projects in Mexico before university. For ages 17–19." data-es="Un año en México para trabajar en tus proyectos antes de la universidad. Para jóvenes de 17 a 19 años.">Spend a year working on projects in Mexico before university. For ages 17–19.</p></div><a class="bc-primary" href="#bc-program"><span data-en="Apply to the club" data-es="Quiero postularme">Apply to the club</span><span aria-hidden="true">↗</span></a></section>
+  <footer class="bc-footer"><span>builders club · México</span><span data-en="A year before university, in Mexico." data-es="Un año antes de la universidad, en México.">A year before university, in Mexico.</span></footer>
   <script>
     (()=>{
       const root=document.getElementById('builders-concepts');
       const state={direction:'studio',language:'en'};
-      const headlines={studio:{en:'Build things<br>that matter.<br><em>Become someone<br>who can.</em>',es:'Crea cosas<br>que importen.<br><em>Conviértete en<br>quien puede.</em>'},launch:{en:'Turn your<br>what if<br><em>into what’s next.</em>',es:'Convierte tu<br>¿y si…?<br><em>en lo que sigue.</em>'},field:{en:'A year of making.<br><em>A lifetime<br>of possibility.</em>',es:'Un año<br>para crear.<br><em>Una vida de<br>posibilidades.</em>'}};
+      const headlines={studio:{en:'A year to try<br>your ideas<br><em>before university.</em>',es:'Un año para<br>probar tus ideas<br><em>antes de la<br>universidad.</em>'},launch:{en:'Turn your<br>what if<br><em>into what’s next.</em>',es:'Convierte tu<br>¿y si…?<br><em>en lo que sigue.</em>'},field:{en:'A year of making.<br><em>A lifetime<br>of possibility.</em>',es:'Un año<br>para crear.<br><em>Una vida de<br>posibilidades.</em>'}};
       function render(){
         root.dataset.direction=state.direction;root.lang=state.language;
         root.querySelectorAll('[data-en]').forEach(el=>{el.textContent=el.dataset[state.language]});
         root.querySelector('h1').innerHTML=headlines[state.direction][state.language];
+        const spanish=state.language==='es';
+        root.querySelector('.bc-nav').setAttribute('aria-label',spanish?'Navegación principal':'Main navigation');
+        root.querySelector('.bc-brand').setAttribute('aria-label',spanish?'Builders Club · Inicio':'Builders Club home');
+        root.querySelector('.bc-logos').setAttribute('aria-label',spanish?'Ejemplos de empresas de tecnología':'Examples of technology companies');
+        document.title=spanish?'Builders Club · Un año antes de la universidad':'Builders Club · A year before university';
+        const description=document.querySelector('meta[name="description"]');
+        if(description)description.content=spanish?'Un año en México para jóvenes de 17 a 19 años. Trabaja en tus proyectos y explora qué te gustaría estudiar.':'A gap year in Mexico for ages 17–19. Work on your own projects and explore what you’d like to study.';
         const toggle=root.querySelector('.bc-lang');
         toggle.innerHTML=state.language==='en'?'EN / <span style="opacity:.6">ES</span>':'<span style="opacity:.6">EN</span> / ES';
         toggle.setAttribute('aria-label',state.language==='en'?'Cambiar a español':'Switch to English');
-        root.querySelector('.bc-art').setAttribute('aria-label',state.language==='en'?'Think deeply. Build boldly. Go further.':'Cuestiona. Crea sin miedo. Llega más lejos.');
+        root.querySelector('.bc-art').setAttribute('aria-label',state.language==='en'?'Questions, projects, and experiences.':'Preguntas, proyectos y experiencias.');
       }
       root.querySelector('.bc-lang').addEventListener('click',()=>{state.language=state.language==='en'?'es':'en';render()});
       render();

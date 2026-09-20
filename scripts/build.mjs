@@ -8,21 +8,19 @@ fragment = fragment.replace('aria-label="Builders Club design directions"', 'ari
 fragment = fragment.replace('root.dataset.direction=state.direction;root.lang=state.language;', 'root.dataset.direction=state.direction;root.lang=state.language;document.documentElement.lang=state.language;');
 fragment = fragment.replace("language:'en'", "language:window.buildersLanguage.get()");
 fragment = fragment.replace("function render(){", "function render(){window.buildersLanguage.set(state.language);");
-fragment = fragment.replace('data-en="Explore the year" data-es="Explora el programa">Explore the year', 'data-en="Save your spot" data-es="Reserva tu lugar">Save your spot');
-fragment = fragment.replace('data-en="Discover the program" data-es="Conoce el programa">Discover the program', 'data-en="Save your spot" data-es="Reserva tu lugar">Save your spot');
 fragment = fragment.replaceAll('class="bc-primary" href="#bc-program"', 'class="bc-primary" href="/apply/"');
-const deadline = '<p class="bc-deadline" data-en="Apply by November 30, 2026" data-es="Postúlate antes del 30 de noviembre de 2026">Apply by November 30, 2026</p>';
+const deadline = '<p class="bc-deadline" data-en="Apply by November 30, 2026" data-es="Fecha límite para postularte: 30 de noviembre de 2026">Apply by November 30, 2026</p>';
 fragment = fragment.replace('</div>\n    </div>\n    <div class="bc-art"', `</div>${deadline}\n    </div>\n    <div class="bc-art"`);
-fragment = fragment.replace('<a class="bc-primary" href="/apply/"><span data-en="Save your spot" data-es="Reserva tu lugar">Save your spot</span><span aria-hidden="true">↗</span></a></section>', `<div><a class="bc-primary" href="/apply/"><span data-en="Save your spot" data-es="Reserva tu lugar">Save your spot</span><span aria-hidden="true">↗</span></a>${deadline}</div></section>`);
+fragment = fragment.replace(/(<a class="bc-primary" href="\/apply\/">.*?<\/a>)<\/section>/, `<div>$1${deadline}</div></section>`);
 
 const document = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Builders Club: a purposeful gap year in Mexico for ages 17–19. Build real products, communicate with confidence, and find your direction before university.">
+  <meta name="description" content="A gap year in Mexico for ages 17–19. Work on your own projects and explore what you’d like to study.">
   <meta name="theme-color" content="#233a2a">
-  <title>Builders Club — Build things that matter</title>
+  <title>Builders Club · A year before university</title>
   <script src="/language.js"></script>
   <style>
     html,body{margin:0;padding:0}html{scroll-behavior:smooth}body{background:#f6f3ea}
@@ -42,7 +40,7 @@ for (const route of ['apply', 'checkout']) {
   await mkdir(new URL(`../public/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../public/${route}/index.html`, import.meta.url), applicationDocument(route));
 }
-for (const asset of ['language.js', 'flow.js', 'flow.css']) {
+for (const asset of ['language.js', 'flow.js', 'flow.css', 'program.js', 'program.css']) {
   await copyFile(new URL(`../designs/${asset}`, import.meta.url), new URL(`../public/${asset}`, import.meta.url));
 }
 console.log('Built landing, application, and checkout preview with EN/ES switching.');
