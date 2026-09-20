@@ -26,10 +26,10 @@ The user has approved the application/payment design, contact fields, and browse
 
 Copy uses a direct, student-facing voice and natural Mexican Spanish. Describe existing activities, avoid repeated motivational slogans, and add program details only when confirmed. Edit source templates and runtime translations, then rebuild `public/`.
 
-## Program timeline
+## Program modules
 
-The timeline maps Phase 1 to leadership and communication, Phase 2 to software/AI/products, and Phase 3 to working across cultures. Exact timing has not been decided, so no month ranges are displayed. Edit each phase’s labels and bilingual content together in `designs/builders-club-directions.html`.
+The program maps Module 1 to leadership and communication, Module 2 to software/AI/products, and Module 3 to working across cultures. Exact timing has not been decided, so no month ranges are displayed. Edit each module’s labels and bilingual content together in `designs/builders-club-directions.html`.
 
-`designs/program.css` and `designs/program.js` provide desktop hover tabs and an inline mobile view at 700 px or less. Hover selects after 120 ms; focus and click select immediately. Arrow keys, Home, and End navigate desktop tabs. The selected phase survives language and viewport changes. Reduced motion disables animations, and all details remain readable without JavaScript.
+`designs/program.css` and `designs/program.js` provide desktop hover tabs and an inline mobile view at 700 px or less. Hover selects after 120 ms; focus and click select immediately. Arrow keys, Home, and End navigate desktop tabs. The selected module survives language and viewport changes. Reduced motion disables animations, and all details remain readable without JavaScript.
 
 Review checklist: both landing CTAs; whitespace validation and keyboard focus; EN/ES across all pages; draft retention on refresh and back navigation; direct route loads; blocked session storage; desktop/mobile layout; and no application/payment network requests.

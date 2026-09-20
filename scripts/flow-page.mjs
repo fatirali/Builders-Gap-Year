@@ -20,19 +20,19 @@ export function applicationDocument(route) {
   </header>
   <main class="document">
     <a class="back" href="/" ${t('← Back to the club', '← Volver al club')}>← Back to the club</a>
-    <div class="steps" aria-label="Progress"><span id="step-apply" ${t('01 / Application', '01 / Solicitud')}>01 / Application</span><span class="step-line" aria-hidden="true"></span><span id="step-checkout" ${t('02 / Checkout preview', '02 / Vista previa del pago')}>02 / Checkout preview</span></div>
+    <div class="steps" aria-label="Progress"><span id="step-apply" ${t('1 / Application', '1 / Solicitud')}>1 / Application</span><span class="step-line" aria-hidden="true"></span><span id="step-checkout" ${t('2 / Checkout preview', '2 / Vista previa del pago')}>2 / Checkout preview</span></div>
     <section id="application"${route === 'checkout' ? ' hidden' : ''}>
       <div class="application-layout">
         <aside class="application-aside">
           <p class="eyebrow" ${t('BUILDERS CLUB · APPLICATION', 'BUILDERS CLUB · SOLICITUD')}>BUILDERS CLUB · APPLICATION</p>
           <h1 tabindex="-1" ${t('A little about you.', 'Cuéntanos sobre ti.')}>A little about you.</h1>
           <p class="intro" ${t('Tell us where you are in school and what you’d like to learn next.', 'Cuéntanos en qué etapa escolar estás y qué te gustaría aprender después.')}>Tell us where you are in school and what you’d like to learn next.</p>
-          <div class="application-outline" aria-hidden="true"><span ${t('01 · Your details', '01 · Tus datos')}>01 · Your details</span><span ${t('02 · Your graduation', '02 · Tu graduación')}>02 · Your graduation</span><span ${t('03 · Your English', '03 · Tu inglés')}>03 · Your English</span><span ${t('04 · Why Builders Club', '04 · Por qué Builders Club')}>04 · Why Builders Club</span></div>
+          <div class="application-outline" aria-hidden="true"><span ${t('1 · Your details', '1 · Tus datos')}>1 · Your details</span><span ${t('2 · Your graduation', '2 · Tu graduación')}>2 · Your graduation</span><span ${t('3 · Your English', '3 · Tu inglés')}>3 · Your English</span><span ${t('4 · Why Builders Club', '4 · Por qué Builders Club')}>4 · Why Builders Club</span></div>
           <p class="deadline"><span class="dot" aria-hidden="true"></span><span ${t('Apply by November 30, 2026', 'Fecha límite: 30 de noviembre de 2026')}>Apply by November 30, 2026</span></p>
         </aside>
         <form id="application-form" novalidate>
           <fieldset class="question-group contact-group">
-            <legend><span class="question-number" aria-hidden="true">01</span><span ${t('Your contact details', 'Tus datos de contacto')}>Your contact details</span></legend>
+            <legend><span class="question-number" aria-hidden="true">1</span><span ${t('Your contact details', 'Tus datos de contacto')}>Your contact details</span></legend>
             <p class="helper" ${t('Start with your name and how we can reach you.', 'Empecemos con tu nombre y cómo podemos contactarte.')}>Start with your name and how we can reach you.</p>
             <div class="field-row contact-row">
               <div class="field"><label for="first-name" ${t('First name', 'Nombre(s)')}>First name</label><input id="first-name" type="text" autocomplete="given-name" required aria-describedby="first-name-error"><p id="first-name-error" class="error" role="alert" hidden ${t('Enter your first name.', 'Escribe tu nombre.')}>Enter your first name.</p></div>
@@ -44,7 +44,7 @@ export function applicationDocument(route) {
             </div>
           </fieldset>
           <fieldset class="question-group">
-            <legend><span class="question-number" aria-hidden="true">02</span><span ${t('When will you graduate from high school?', '¿Cuándo te gradúas de preparatoria?')}>When will you graduate from high school?</span></legend>
+            <legend><span class="question-number" aria-hidden="true">2</span><span ${t('When will you graduate from high school?', '¿Cuándo te gradúas de preparatoria?')}>When will you graduate from high school?</span></legend>
             <p id="graduation-help" class="helper" ${t('Choose the month and year. If you’ve already graduated, enter when you finished.', 'Elige el mes y el año. Si ya terminaste la preparatoria, indica cuándo te graduaste.')}>Choose the month and year. If you’ve already graduated, enter when you finished.</p>
             <div class="field-row">
               <div class="field"><label for="graduation-month" ${t('Month', 'Mes')}>Month</label><select id="graduation-month" required aria-describedby="graduation-help graduation-error"><option value="" ${t('Select month', 'Elige el mes')}>Select month</option></select></div>
@@ -53,7 +53,7 @@ export function applicationDocument(route) {
             <p id="graduation-error" class="error" role="alert" hidden ${t('Choose your graduation month and year, or select “Not sure yet”.', 'Elige el mes y el año de graduación, o selecciona “Aún no lo sé”.')}>Choose your graduation month and year, or select “Not sure yet”.</p>
           </fieldset>
           <fieldset class="question-group">
-            <legend><span class="question-number" aria-hidden="true">03</span><span ${t('Have you taken an English test?', '¿Has presentado un examen de inglés?')}>Have you taken an English test?</span></legend>
+            <legend><span class="question-number" aria-hidden="true">3</span><span ${t('Have you taken an English test?', '¿Has presentado un examen de inglés?')}>Have you taken an English test?</span></legend>
             <p id="english-help" class="helper" ${t('Choose your test and the score scale shown on your report. It’s okay if you haven’t taken one yet.', 'Elige tu examen y la escala que aparece en tu reporte. Si aún no has presentado uno, puedes indicarlo aquí.')}>Choose your test and the score scale shown on your report. It’s okay if you haven’t taken one yet.</p>
             <div class="field"><label for="english-test" ${t('Test and score scale', 'Examen y escala de puntaje')}>Test and score scale</label><select id="english-test" required aria-describedby="english-help english-test-error">
               <option value="" ${t('Select an option', 'Elige una opción')}>Select an option</option>
@@ -67,7 +67,7 @@ export function applicationDocument(route) {
             <div id="score-field" class="field score-field" hidden><label for="english-score" ${t('Overall score', 'Puntaje total')}>Overall score</label><select id="english-score" aria-describedby="score-help english-score-error"></select><p id="score-help" class="helper"></p><p id="english-score-error" class="error" role="alert" hidden ${t('Select the overall score shown on your report.', 'Elige el puntaje total que aparece en tu reporte.')}>Select the overall score shown on your report.</p></div>
           </fieldset>
           <fieldset class="question-group">
-            <legend><span class="question-number" aria-hidden="true">04</span><span ${t('Why Builders Club?', '¿Por qué Builders Club?')}>Why Builders Club?</span></legend>
+            <legend><span class="question-number" aria-hidden="true">4</span><span ${t('Why Builders Club?', '¿Por qué Builders Club?')}>Why Builders Club?</span></legend>
             <label class="answer-label" for="answer" ${t('Why do you want to join the club?', '¿Por qué quieres unirte al club?')}>Why do you want to join the club?</label>
             <p id="answer-help" class="helper" ${t('You could write about a project you’d like to try or something you want to learn.', 'Puedes contarnos sobre un proyecto que te gustaría intentar o algo que quieras aprender.')}>You could write about a project you’d like to try or something you want to learn.</p>
             <textarea id="answer" required rows="5" aria-describedby="answer-help answer-error" placeholder="Write your answer here."></textarea>
@@ -112,7 +112,7 @@ export function applicationDocument(route) {
     <p id="storage-note" class="preview-note" role="status" hidden ${t('Your browser can’t save your answers in this tab. Copy them before refreshing or leaving.', 'Tu navegador no puede guardar tus respuestas en esta pestaña. Cópialas antes de recargar o salir.')}>Your browser can’t save your answers in this tab. Copy them before refreshing or leaving.</p>
     <noscript>This preview needs JavaScript to continue. / Esta vista previa necesita JavaScript para continuar.</noscript>
   </main>
-  <footer><span>builders club · México</span><span ${t('A year before university, in Mexico.', 'Un año antes de la universidad, en México.')}>A year before university, in Mexico.</span></footer>
+  <footer><span>builders club · México</span></footer>
 </body>
 </html>`;
 }
