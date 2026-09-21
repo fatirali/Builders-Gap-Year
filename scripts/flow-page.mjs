@@ -112,7 +112,7 @@ export function applicationDocument(route) {
     <p id="storage-note" class="preview-note" role="status" hidden ${t('Your browser can’t save your answers in this tab. Copy them before refreshing or leaving.', 'Tu navegador no puede guardar tus respuestas en esta pestaña. Cópialas antes de recargar o salir.')}>Your browser can’t save your answers in this tab. Copy them before refreshing or leaving.</p>
     <noscript>This preview needs JavaScript to continue. / Esta vista previa necesita JavaScript para continuar.</noscript>
   </main>
-  <footer><span>builders club · México</span></footer>
+  <footer><span>builders club · LATAM</span></footer>
 </body>
 </html>`;
 }

@@ -18,7 +18,7 @@ const document = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A gap year in Mexico for ages 17–19. Work on your own projects and explore what you’d like to study.">
+  <meta name="description" content="A gap year in LATAM for ages 17–19. Work on your own projects and explore what you’d like to study.">
   <meta name="theme-color" content="#233a2a">
   <title>Builders Club · A year before university</title>
   <script src="/language.js"></script>
